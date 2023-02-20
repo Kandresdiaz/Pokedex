@@ -50,7 +50,7 @@ async function fetchpokemon (pokemon){
 // a.innerHTML=b
 // }
 
-console.log(fetchpokemon("pupitar"));
+//console.log(fetchpokemon("pupitar"));
 
 //buscar pokemon 
 let boton =document.getElementById('boton')
