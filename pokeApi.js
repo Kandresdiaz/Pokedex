@@ -6,8 +6,9 @@ async function fetchpokemon (pokemon){
 
     const respuesta = await fetch(api+pokemon)
 
-    if(respuesta == 404){
-        container.innerHTML=`<h2> el pokemon ${pokemon.toUpperCase()} no se encuentra </h2>`
+    if(respuesta.status == 404){
+        alert("Pokemon No encontrados ")
+       
     }else if(respuesta.status == 200){ 
         const carta =document.createElement('div')
         carta.id="carta"   
@@ -38,8 +39,7 @@ async function fetchpokemon (pokemon){
         carta.innerHTML= `
         <h2> ${data.name.toUpperCase()}</h2>
         <div> <img src="${data.sprites.front_default}" alt="" /> </div>
-        <div> tipo: ${data.types[0].type.name}</div>
-        <div> img tipo:<img src="${data.types[0].type.url}" /></div>
+        <div> tipo: ${data.types[0].type.name}</div>    
         
         `
         console.log(data);
